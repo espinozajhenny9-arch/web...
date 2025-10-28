@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUNDO PLAST</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MUNDO PLAST</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" href="#Inicio">Inicio</a>
+          <a class="nav-link" href="#Productos">Productos</a>
+          <a class="nav-link" href="#carrito">Carrito</a>
+          <a class="nav-link" href="#Contacto">Contactos</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+   <!-- CARRUSEL -->
+<!-- Carrusel de imágenes -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="img/portada1.jpeg" class="d-block w-100" alt="Portada 1">
+    </div>
+
+    <div class="carousel-item">
+      <img src="img/portada2.jpeg" class="d-block w-100" alt="Portada 2">
+    </div>
+
+    <div class="carousel-item">
+      <img src="img/portada3.jpeg" class="d-block w-100" alt="Portada 3">
+    </div>
+
+  </div>
+
+  
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+  <!-- CATÁLOGO -->
+  <section class="Productos">
+    <h2>Catálogo de Productos</h2>
+    <div class="Productos">
+
+      <div class="producto">
+        <img src="img/canastas.jpeg" alt="Canasta plástica">
+        <h3>Canastas</h3>
+        <p>Bs 25.00</p>
+        <button onclick="agregarAlCarrito('Canasta Plástica', 25)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="img/bañera para bebe.jpeg" alt="bañera para bebe">
+        <h3>Bañera para bebé</h3>
+        <p>Bs 150.00</p>
+        <button onclick="agregarAlCarrito('Bañera para bebé', 150)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="img/bañadores.jpeg" alt="Bañadores plásticos">
+        <h3>Bañadores</h3>
+        <p>Bs 30.00</p>
+        <button onclick="agregarAlCarrito('Bañadores', 30)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="img/cesto de ropa.jpeg" alt="cesto de ropa">
+        <h3>Cesto de ropa</h3>
+        <p>Bs 110.00</p>
+        <button onclick="agregarAlCarrito('Cesto de ropa', 110)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/topers.jpeg" alt="topers">
+        <h3>topers</h3>
+        <p>Bs 20.00 </p>
+        <button onclick="agregarAlCarrito('topers', 110)">Agregar al carrito</button>
+      </div>
+      <div class="producto">
+        <img src="img/ordenadores.jpeg" alt="ordenadores">
+        <h3>Ordenadores</h3>
+        <p>Bs 50.00</p>
+        <button onclick="agregarAlCarrito('Ordenadores', 50)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="img/taburete.jpeg" alt="Taburete plástico">
+        <h3>Taburete</h3>
+        <p>Bs 28.00</p>
+        <button onclick="agregarAlCarrito('Taburete', 28)">Agregar al carrito</button>
+      </div>
+
+      <div class="producto">
+        <img src="img/baldes.jpeg" alt="Balde plástico">
+        <h3>Baldes</h3>
+        <p>Bs 22.00</p>
+        <button onclick="agregarAlCarrito('Balde', 22)">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARRITO -->
+<section id="carrito" class="carrito">
+  <h2>🛒 Tu Carrito</h2>
+  <div id="carrito-items" class="carrito-lista"></div>
+
+  <div class="carrito-resumen">
+    <p id="carrito-total"><strong>Total:</strong> Bs 0.00</p>
+    <div class="carrito-botones">
+      <button class="btn-vaciar" onclick="vaciarCarrito()">🧹 Vaciar carrito</button>
+      <button class="btn-finalizar" onclick="enviarWhatsApp()">✅ Finalizar compra</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  let carrito = [];
+  let totalCarrito = 0;
+
+  // Agregar producto
+  function agregarAlCarrito(nombre, precio) {
+    const producto = carrito.find(p => p.nombre === nombre);
+    if (producto) {
+      producto.cantidad++;
+    } else {
+      carrito.push({ nombre, precio, cantidad: 1 });
+    }
+    actualizarCarrito();
+  }
+
+  // Actualizar interfaz del carrito
+  function actualizarCarrito() {
+    const contenedor = document.getElementById("carrito-items");
+    contenedor.innerHTML = "";
+    totalCarrito = 0;
+
+    carrito.forEach((p, i) => {
+      const subtotal = p.precio * p.cantidad;
+      totalCarrito += subtotal;
+
+      const item = document.createElement("div");
+      item.classList.add("carrito-item");
+      item.innerHTML = `
+        <div class="info-producto">
+          <span class="nombre">${p.nombre}</span>
+          <small>Bs ${p.precio.toFixed(2)} × ${p.cantidad} = <strong>Bs ${subtotal.toFixed(2)}</strong></small>
+        </div>
+        <div class="botones-item">
+          <button class="btn-menos" onclick="quitarUno(${i})">➖</button>
+          <button class="btn-eliminar" onclick="eliminarProducto(${i})">🗑</button>
+        </div>
+      `;
+      contenedor.appendChild(item);
+    });
+
+    document.getElementById("carrito-total").innerText = `💰 Total: Bs ${totalCarrito.toFixed(2)}`;
+  }
+
+  // Quitar una unidad
+  function quitarUno(index) {
+    carrito[index].cantidad--;
+    if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
+    actualizarCarrito();
+  }
+
+  // Eliminar producto completamente
+  function eliminarProducto(index) {
+    if (confirm(`¿Eliminar "${carrito[index].nombre}" del carrito?`)) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+  }
+  // Vaciar todo el carrito
+  function vaciarCarrito() {
+    if (carrito.length === 0) {
+      alert("Tu carrito ya está vacío.");
+      return;
+    }
+    if (confirm("¿Seguro que deseas vaciar todo el carrito?")) {
+      carrito = [];
+      actualizarCarrito();
+    }
+  }
+  // Enviar pedido a WhatsApp
+  function enviarWhatsApp() {
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío.");
+      return;
+    }
+    const numero = "59164362315"; 
+    let mensaje = "🛍️ *Pedido MUNDO PLAST*\n\n";
+    carrito.forEach(p => {
+      mensaje += `• ${p.nombre} × ${p.cantidad} = Bs ${(p.precio * p.cantidad).toFixed(2)}\n`;
+    });
+    mensaje += `\n💰 *Total:* Bs ${totalCarrito.toFixed(2)}\n\nGracias por su compra.`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+  <!-- CONTACTO -->
+  <section id="Contacto" class="contacto-social text-center mt-5">
+    <h2>Contáctanos y Síguenos</h2>
+    <div class="https://www.instagram.com/plast4274/ ">
+      <a href="https://wa.me/59164362315" target="_blank" class="btn btn-success mx-2">WhatsApp 📱</a>
+      <a href="https://www.facebook.com/media/set/?vanity=61582442672520&set=a.122096621865081422" target="_blank" class="btn btn-primary mx-2">Facebook</a>
+      <a href="https://www.instagram.com/plast4274/" target="_blank" class="btn btn-success mx-2" style="background-color:#d48282;border-color:#970f0f;">Instagram</a>
+    </div>
+    <footer class="mt-5 py-3 bg-light">
+      <p class="mb-0"> <style> color:backdrop</style>&copy; 2025 MUNDO PLAST. Todos los derechos reservados.</p>
+    </footer>
+  </section>
+  <h3 style="text-align:center; margin-top:20px;">📍  Tupiza, Bolivia</h3>
+<iframe 
+  src="https://www.google.com/maps?q=Tupiza,Bolivia&output=embed"
+  width="100%"
+  height="300"
+  style="border:0; border-radius:10px;"
+  allowfullscreen=""
+  loading="lazy">
+</iframe>
+</body>
+</html>
